@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
   {
     icon: <Bot />,
     name: "Ai Buddy",
-    path: "/ai-buddy",
+    path: "/aibuddy",
   },
   {
     icon: <CalenderIcon />,
@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
   {
     icon: <Headphones />,
     name: "Welness",
-    path: "/ai-buddy",
+    path: "/welness",
   },
   {
     name: "Tables",
