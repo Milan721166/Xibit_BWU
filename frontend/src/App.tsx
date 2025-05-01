@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
 import NotFound from "./pages/OtherPage/NotFound";
@@ -18,6 +18,8 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import Wellness from "./pages/Welness/Wellness";
+import MindMateLandingPage from "./pages/LandingPage/MindMateLandingPage"; // Import the landing page
 
 export default function App() {
   return (
@@ -25,6 +27,9 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <Routes>
+          {/* Landing Page Route (outside AppLayout) */}
+          <Route path="/landing" element={<MindMateLandingPage />} />
+          
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
@@ -33,6 +38,7 @@ export default function App() {
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
+            <Route path="/wellness" element={<Wellness />} />
 
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />
