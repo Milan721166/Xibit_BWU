@@ -18,14 +18,23 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+<<<<<<< HEAD
 import Wellness from "./pages/Welness/Wellness";
 import MindMateLandingPage from "./pages/LandingPage/MindMateLandingPage"; // Import the landing page
+=======
+import AIChatInterface from "./pages/AiBuddy/AiBuddy";
+import { useAuth } from "./hooks/useAuth";
+import StudentDashboard from "./pages/Dashboard/StudentDasboard";
+import TeacherDashboard from "./pages/Dashboard/TeacherDasboard";
+>>>>>>> e0800e4604f39be4aa308362def55421c9b1962f
 
 export default function App() {
+  const {user,role}=useAuth();
   return (
     <>
       <Router>
         <ScrollToTop />
+<<<<<<< HEAD
         <Routes>
           {/* Landing Page Route (outside AppLayout) */}
           <Route path="/landing" element={<MindMateLandingPage />} />
@@ -66,6 +75,62 @@ export default function App() {
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+=======
+        {user ? (
+           <Routes>
+           {/* Dashboard Layout */}
+           <Route element={<AppLayout />}>
+             <Route index path="/" element={role=='user' ? <StudentDashboard/> : role=='teacher' ? <TeacherDashboard/> : <Home/>} />
+ 
+             {/* Others Page */}
+             <Route path="/profile" element={<UserProfiles />} />
+             <Route path="/calendar" element={<Calendar />} />
+             <Route path="/aibuddy" element={<AIChatInterface />} />
+             <Route path="/blank" element={<Blank />} />
+ 
+             {/* Forms */}
+             <Route path="/form-elements" element={<FormElements />} />
+ 
+             {/* Tables */}
+             <Route path="/basic-tables" element={<BasicTables />} />
+ 
+             {/* Ui Elements */}
+             <Route path="/alerts" element={<Alerts />} />
+             <Route path="/avatars" element={<Avatars />} />
+             <Route path="/badge" element={<Badges />} />
+             <Route path="/buttons" element={<Buttons />} />
+             <Route path="/images" element={<Images />} />
+             <Route path="/videos" element={<Videos />} />
+ 
+             {/* Charts */}
+             <Route path="/line-chart" element={<LineChart />} />
+             <Route path="/bar-chart" element={<BarChart />} />
+           </Route>
+ 
+           {/* Auth Layout */}
+           <Route path="/signin" element={<SignIn />} />
+           <Route path="/signup" element={<SignUp />} />
+ 
+           {/* Fallback Route */}
+           <Route path="*" element={<NotFound />} />
+         </Routes>
+        
+      )
+    :(
+      <Routes>
+      {/* Dashboard Layout */}
+      
+      {/* Auth Layout */}
+      <Route path="/" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+
+      {/* Fallback Route */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+    )
+    }
+       
+>>>>>>> e0800e4604f39be4aa308362def55421c9b1962f
       </Router>
     </>
   );
