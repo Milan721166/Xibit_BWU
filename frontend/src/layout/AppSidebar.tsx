@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
   {
     icon: <Headphones />,
     name: "Welness",
-    path: "/ai-buddy",
+    path: "/welness",
   },
   {
     name: "Tables",
