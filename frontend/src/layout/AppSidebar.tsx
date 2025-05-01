@@ -15,8 +15,8 @@ import {
   TableIcon,
   UserCircleIcon,
 } from "../icons";
+import { Bot, Headphones } from "lucide-react";
 import { useSidebar } from "../context/SidebarContext";
-import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
   name: string;
@@ -29,11 +29,16 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
+    path: "/",
+  },
+  {
+    icon: <Bot />,
+    name: "Ai Buddy",
+    path: "/ai-buddy",
   },
   {
     icon: <CalenderIcon />,
-    name: "Calendar",
+    name: "Planner",
     path: "/calendar",
   },
   {
@@ -42,9 +47,9 @@ const navItems: NavItem[] = [
     path: "/profile",
   },
   {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
+    icon: <Headphones />,
+    name: "Welness",
+    path: "/ai-buddy",
   },
   {
     name: "Tables",
@@ -306,28 +311,10 @@ const AppSidebar: React.FC = () => {
         <Link to="/">
           {isExpanded || isHovered || isMobileOpen ? (
             <>
-              <img
-                className="dark:hidden"
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-              <img
-                className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
+              <h1 className="text-3xl">MindMate</h1>
             </>
           ) : (
-            <img
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+            <h1 className="text-xl">MindMate</h1>
           )}
         </Link>
       </div>
@@ -368,7 +355,6 @@ const AppSidebar: React.FC = () => {
             </div>
           </div>
         </nav>
-        {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null}
       </div>
     </aside>
   );
