@@ -1,1 +1,1 @@
-export const api="https://hack-api.armanm.tech/"
+export const api="https://hack-api-v2.armanm.tech/"
