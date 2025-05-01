@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 exports.signup = async (req, res) => {
     try {
         const { name, email, password, role } = req.body;
-
+        
         // Check if user already exists
         const existingUser = await User.findOne({ email });
         if (existingUser) {
@@ -26,19 +26,27 @@ exports.signup = async (req, res) => {
         });
 
         // Generate JWT token
+        
+        
+        await user.save();
         const token = jwt.sign(
             { userId: user._id, role: user.role },
-            process.env.JWT_SECRET,
+            process.env.JWT_SECRET || 'your_jwt_secret',
             { expiresIn: '7d' }
         );
-        user.token = token;
+        await User.findByIdAndUpdate(user._id
+        , { token }, { new: true });
 
-        await user.save();
 
         // Send response without password
-        const { password: _, ...userData } = user.toObject();
-        res.status(201).json({ user: userData, token });
+        res.status(200).json({ user: {
+            userId:user._id,
+            name:user.name,
+            email:user.email,
+            role:user.role
+        }, token });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
@@ -116,7 +124,7 @@ exports.tokenRefresh=async(req,res)=>{
         res.status(500).json({
             error:error.message
         })
-        
+
         
     }
 }
