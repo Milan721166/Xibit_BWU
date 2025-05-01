@@ -91,7 +91,9 @@ export default function App() {
             {/* Dashboard Layout */}
             <Route path="/wellness" element={<Wellness />} />
             {/* Auth Layout */}
-            <Route path="/" element={<SignIn />} />
+            <Route path="/" element={<MindMateLandingPage />} />
+
+            <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
 
             {/* Fallback Route */}
