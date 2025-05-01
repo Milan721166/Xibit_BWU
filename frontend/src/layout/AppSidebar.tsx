@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
   {
     icon: <Bot />,
     name: "Ai Buddy",
-    path: "/ai-buddy",
+    path: "/aibuddy",
   },
   {
     icon: <CalenderIcon />,
