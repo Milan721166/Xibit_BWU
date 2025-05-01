@@ -4,7 +4,9 @@ const connectDB = require('./db/db');
 const AuthRouter = require('./routes/auth');
 const userRoutes = require('./routes/userRoutes');
 const app = express();
-const cors=require('cors');
+const cors = require('cors');
+
+
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
