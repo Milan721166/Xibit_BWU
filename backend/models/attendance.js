@@ -20,6 +20,10 @@ const attendanceSchema = new mongoose.Schema({
     recordedAt: {
         type: Date,
         default: Date.now
+    },
+    subject: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Subject",
     }
 });
 
