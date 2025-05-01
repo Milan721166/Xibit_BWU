@@ -46,6 +46,7 @@ const generateRandomData = async () => {
         await Attendance.insertMany(attendanceRecords);
         console.log('✅ Successfully inserted random attendance records.');
     } catch (error) {
+        console.log(error);
         console.error('❌ Error generating random data:', error.message);
     } finally {
         mongoose.connection.close();
