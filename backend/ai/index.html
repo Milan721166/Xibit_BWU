@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Generator</title>
+</head>
+
+<body>
+    <h1>AI Text Generator</h1>
+    <textarea id="prompt" placeholder="Enter your prompt here"></textarea>
+    <button id="generate">Generate Text</button>
+    <h2>Generated JSON Response:</h2>
+    <pre id="output"></pre> <!-- Use <pre> to display JSON nicely -->
+
+    <script>
+        document.getElementById("generate").addEventListener("click", async () => {
+            const prompt = document.getElementById("prompt").value;
+
+            if (!prompt) {
+                alert("Please enter a prompt!");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:3000/generate-text", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ prompt }),
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    document.getElementById("output").textContent = JSON.stringify({ error: data.error }, null, 2);
+                } else {
+                    document.getElementById("output").textContent = JSON.stringify(data, null, 2); // Pretty-print JSON
+                }
+            } catch (error) {
+                document.getElementById("output").textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
