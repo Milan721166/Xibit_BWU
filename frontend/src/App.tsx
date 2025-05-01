@@ -20,6 +20,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import Wellness from "./pages/Welness/Wellness";
 import MindMateLandingPage from "./pages/LandingPage/MindMateLandingPage"; // Import the landing page
+
 import AIChatInterface from "./pages/AiBuddy/AiBuddy";
 import { useAuth } from "./hooks/useAuth";
 import StudentDashboard from "./pages/Dashboard/StudentDasboard";
@@ -28,10 +29,13 @@ import VideoCallLanding from "./pages/VideoConference/VideoCallLanding";
 
 export default function App() {
   const { user, role } = useAuth();
+
+
   return (
     <>
       <Router>
         <ScrollToTop />
+
 
         {user ? (
           <Routes>
@@ -96,6 +100,47 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         )}
+
+        <Routes>
+          {/* Landing Page Route (outside AppLayout) */}
+          <Route path="/landing" element={<MindMateLandingPage />} />
+          
+          {/* Dashboard Layout */}
+          <Route element={<AppLayout />}>
+            <Route index path="/" element={<Home />} />
+
+            {/* Others Page */}
+            <Route path="/profile" element={<UserProfiles />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/blank" element={<Blank />} />
+            <Route path="/wellness" element={<Wellness />} />
+
+            {/* Forms */}
+            <Route path="/form-elements" element={<FormElements />} />
+
+            {/* Tables */}
+            <Route path="/basic-tables" element={<BasicTables />} />
+
+            {/* Ui Elements */}
+            <Route path="/alerts" element={<Alerts />} />
+            <Route path="/avatars" element={<Avatars />} />
+            <Route path="/badge" element={<Badges />} />
+            <Route path="/buttons" element={<Buttons />} />
+            <Route path="/images" element={<Images />} />
+            <Route path="/videos" element={<Videos />} />
+
+            {/* Charts */}
+            <Route path="/line-chart" element={<LineChart />} />
+            <Route path="/bar-chart" element={<BarChart />} />
+          </Route>
+
+          {/* Auth Layout */}
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+
+          {/* Fallback Route */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </Router>
     </>
   );

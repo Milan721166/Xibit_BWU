@@ -5,7 +5,7 @@ const AuthRouter = require('./routes/auth');
 const userRoutes = require('./routes/userRoutes');
 const app = express();
 const cors = require('cors');
-
+const aiRouter = require('./controllers/aiControlloer');
 
 app.use(cors({
     origin: '*',
@@ -20,7 +20,7 @@ connectDB();
 app.use(express.json());
 app.use('/auth', AuthRouter)
 app.use('/userRoutes', userRoutes);
-
+app.use('/ai',aiRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
