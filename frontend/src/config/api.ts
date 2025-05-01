@@ -1,0 +1,1 @@
+export const api="https://hack-api.armanm.tech/"

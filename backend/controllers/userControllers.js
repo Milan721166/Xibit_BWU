@@ -87,3 +87,36 @@ exports.getAllUsers = async (req, res) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
+
+exports.tokenRefresh=async(req,res)=>{
+    try {
+        const {token}=req.body;
+        if(!token){
+            res.status(400).json({
+                error:"Token Not Found"
+
+            })
+        }
+        const decoded=jwt.verify(token,process.env.JWT_SECRET);
+        const user=await User.findById(decoded.userId);
+        if(!user){
+            res.status(400).json({
+                error:"User Not Found"
+            })
+        }
+        res.status(200).json({
+            token:jwt.sign({userId:user._id,role:user.role},process.env.JWT_SECRET,{expiresIn:'7d'}),
+            user:{
+                name:user.name,
+                email:user.email,
+                role:user.role
+            }
+        })
+    } catch (error) {
+        res.status(500).json({
+            error:error.message
+        })
+        
+        
+    }
+}
