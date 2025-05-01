@@ -1,192 +1,133 @@
-# TailAdmin React - Free React Tailwind Admin Dashboard Template
+Here's a clean, professional, and hackathon-ready `README.md` for **MindMate: AI-Powered Academic & Mental Health Companion for Students**:
 
-TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers
-with everything they need to create a comprehensive, data-driven back-end,
-dashboard, or admin panel solution for upcoming web projects.
+---
 
-With TailAdmin, you get access to all the necessary dashboard UI components, elements, and pages required to build a
-feature-rich and complete dashboard or admin panel. Whether you're building dashboard or admin panel for a complex web
-application or a simple website, TailAdmin is the perfect solution to help you get up and running quickly.
+````md
+# 🎓 MindMate - AI-Powered Academic & Mental Health Companion for Students
 
-![TailAdmin React.js Dashboard Preview](./banner.png)
+![MindMate Banner](https://your-placeholder-image-url.com/banner.png) <!-- optional banner -->
 
-## Overview
+## 🚀 Overview
 
-TailAdmin provides essential UI components and layouts for building feature-rich, data-driven admin dashboards and
-control panels. It's built on:
+**MindMate** is an all-in-one AI-powered platform designed to support students in managing their academic workload, mental well-being, and career direction. It combines personalized scheduling, mental health check-ins, academic assistance, and career insights—all through the power of AI and intuitive design.
 
-- React 19
-- TypeScript
-- Tailwind CSS
+> “We’re not just helping students stay on track—we’re helping them thrive.”
 
-### Quick Links
+---
 
-- [✨ Visit Website](https://tailadmin.com)
-- [📄 Documentation](https://tailadmin.com/docs)
-- [⬇️ Download](https://tailadmin.com/download)
-- [🖌️ Figma Design File (Community Edition)](https://www.figma.com/community/file/1214477970819985778)
-- [⚡ Get PRO Version](https://tailadmin.com/pricing)
+## 🧠 Features
 
-### Demos
+### 📅 Smart Academic Scheduler
 
-- [Free Version](https://free-react-demo.tailadmin.com/)
-- [Pro Version](https://react-demo.tailadmin.com)
+- Personalized timetable generation from syllabus and deadlines
+- Adaptive scheduling with focus-rest optimization
+- Calendar integration + reminder notifications
 
-### Other Versions
+### 😊 Daily Mental Health Check-ins
 
-- [HTML Version](https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template)
-- [Next.js Version](https://github.com/TailAdmin/free-nextjs-admin-dashboard)
-- [Vue.js Version](https://github.com/TailAdmin/vue-tailwind-admin-dashboard)
+- 1-minute anonymous mood check-ins
+- Sentiment analysis from journals or chat entries
+- Tips, resources, and access to campus support
 
-## Installation
+### 🤖 AI Academic Buddy
 
-### Prerequisites
+- 24/7 doubt-solving using ChatGPT
+- Note summarization, PDF simplification
+- Quiz generation from study material
 
-To get started with TailAdmin, ensure you have the following prerequisites installed and set up:
+### 🎯 Career Clarity Dashboard
 
-- Node.js 18.x or later (recommended to use Node.js 20.x or later)
+- Career suggestions based on interests, personality, and current profile
+- Trending roles with learning paths and free resources
 
-### Cloning the Repository
+### 📊 Self-Improvement Analytics
 
-Clone the repository using the following command:
+- Mood and productivity tracking
+- Weekly performance & engagement reports
+- Habit tracker with motivational streaks
+
+---
+
+## 🔧 Tech Stack
+
+| Layer        | Technology                                                            |
+| ------------ | --------------------------------------------------------------------- |
+| **Frontend** | Next.js, Tailwind CSS, Framer Motion                                  |
+| **Backend**  | Node.js, Express.js / Convex                                          |
+| **Database** | Supabase / Firebase                                                   |
+| **AI/NLP**   | OpenAI GPT-4, HuggingFace (sentiment analysis), LangChain             |
+| **Auth**     | Clerk / Firebase Authentication                                       |
+| **Others**   | Recharts, OneSignal / Twilio (notifications), React Calendar, Zustand |
+
+---
+
+## 📸 Screenshots (optional)
+
+> _Coming Soon_
+
+---
+
+## 📦 Installation
 
 ```bash
-git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
+git clone https://github.com/yourusername/mindmate.git
+cd mindmate
+npm install
+npm run dev
+```
+````
+
+---
+
+## 📁 Folder Structure (Simplified)
+
+```
+/frontend
+  /components
+  /pages
+  /utils
+/backend
+  /routes
+  /controllers
+  /models
+/shared
+  /constants
+  /types
 ```
 
-> Windows Users: place the repository near the root of your drive if you face issues while cloning.
+---
 
-1. Install dependencies:
+## 🧪 AI Models Used
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+- GPT-4 for academic Q&A, summarization, and planning
+- HuggingFace DistilBERT for mood/sentiment classification
+- Custom ML models for engagement prediction & risk analysis
 
-   > Use the `--legacy-peer-deps` flag, if you face issues while installing.
+---
 
-2. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+## 💡 Future Scope
 
-## Components
+- Voice emotion analysis during lectures
+- Peer-to-peer anonymous therapy circles
+- Gamification leaderboard for productivity and well-being
 
-TailAdmin is a pre-designed starting point for building a web-based dashboard using React.js and Tailwind CSS. The
-template includes:
+---
 
-- Sophisticated and accessible sidebar
-- Data visualization components
-- Prebuilt profile management and 404 page
-- Tables and Charts(Line and Bar)
-- Authentication forms and input elements
-- Alerts, Dropdowns, Modals, Buttons and more
-- Can't forget Dark Mode 🕶️
+## ✨ Team CodeNova Squad
 
-All components are built with React and styled using Tailwind CSS for easy customization.
+- **Rimanshu** – Frontend Wizard 🌟
+- [Arman Mondol, Molay maity, Milan sahoo]
 
-## Feature Comparison
+---
 
-### Free Version
+## 📃 License
 
-- 1 Unique Dashboard
-- 30+ dashboard components
-- 50+ UI elements
-- Basic Figma design files
-- Community support
+MIT License
 
-### Pro Version
+---
 
-- 5 Unique Dashboards: Analytics, Ecommerce, Marketing, CRM, Stocks (more coming soon)
-- 400+ dashboard components and UI elements
-- Complete Figma design file
-- Email support
+## 💌 Let's Connect
 
-To learn more about pro version features and pricing, visit our [pricing page](https://tailadmin.com/pricing).
+If you believe in helping students be their best selves through tech, [connect with us](mailto:Rimanshupatel1@gmail.com) or star the repo!
 
-## Changelog
-
-### Version 2.0.2 - [March 25, 2025]
-
-- Upgraded to React 19
-- Included overrides for packages to prevent peer dependency errors.
-- Migrated from react-flatpickr to flatpickr package for React 19 support
-
-### Version 2.0.1 - [February 27, 2025]
-
-#### Update Overview
-
-- Upgraded to Tailwind CSS v4 for better performance and efficiency.
-- Updated class usage to match the latest syntax and features.
-- Replaced deprecated class and optimized styles.
-
-#### Next Steps
-
-- Run npm install or yarn install to update dependencies.
-- Check for any style changes or compatibility issues.
-- Refer to the Tailwind CSS v4 [Migration Guide](https://tailwindcss.com/docs/upgrade-guide) on this release. if needed.
-- This update keeps the project up to date with the latest Tailwind improvements. 🚀
-
-### Version 2.0.0 - [February 2025]
-
-A major update with comprehensive redesign and modern React patterns implementation.
-
-#### Major Improvements
-
-- Complete UI redesign with modern React patterns
-- New features: collapsible sidebar, chat, and calendar
-- Improved performance and accessibility
-- Updated data visualization using ApexCharts
-
-#### Key Features
-
-- Redesigned dashboards (Ecommerce, Analytics, Marketing, CRM)
-- Enhanced navigation with React Router integration
-- Advanced tables with sorting and filtering
-- Calendar with drag-and-drop support
-- New UI components and improved existing ones
-
-#### Breaking Changes
-
-- Updated sidebar component API
-- Migrated charts to ApexCharts
-- Revised authentication system
-
-[Read more](https://tailadmin.com/docs/update-logs/react) on this release.
-
-### Version 1.3.7 - [June 20, 2024]
-
-#### Enhancements
-
-1. Remove Repetition of DefaultLayout in every Pages
-2. Add ClickOutside Component for reduce repeated functionality in Header Message, Notification and User Dropdowns.
-
-### Version 1.3.6 - [Jan 31, 2024]
-
-#### Enhancements
-
-1. Integrate flatpickr in [Date Picker/Form Elements]
-2. Change color after select an option [Select Element/Form Elements].
-3. Make it functional [Multiselect Dropdown/Form Elements].
-4. Make best value editable [Pricing Table One/Pricing Table].
-5. Rearrange Folder structure.
-
-### Version 1.2.0 - [Apr 28, 2023]
-
-- Add Typescript in TailAdmin React.
-
-### Version 1.0.0 - Initial Release - [Mar 13, 2023]
-
-- Initial release of TailAdmin React.
-
-## License
-
-TailAdmin React.js Free Version is released under the MIT License.
-
-## Support
-
-If you find this project helpful, please consider giving it a star on GitHub. Your support helps us continue developing
-and maintaining this template.
+---
