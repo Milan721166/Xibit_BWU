@@ -11,20 +11,20 @@ const Wellness = () => {
 
   const musicTracks = [
     {
-      id: 1,
-      title: "Calming Ocean Waves",
-      artist: "Nature Sounds",
-      duration: "5:32",
-      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
-      cover: "https://source.unsplash.com/random/300x300/?ocean,water",
-    },
-    {
       id: 2,
       title: "Meditation Music",
       artist: "Zen Master",
       duration: "8:45",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
       cover: "https://source.unsplash.com/random/300x300/?meditation,yoga",
+    },
+    {
+      id: 1,
+      title: "Calming Ocean Waves",
+      artist: "Nature Sounds",
+      duration: "5:32",
+      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+      cover: "https://source.unsplash.com/random/300x300/?ocean,water",
     },
     {
       id: 3,

@@ -89,7 +89,7 @@ export default function App() {
         ) : (
           <Routes>
             {/* Dashboard Layout */}
-            <Route path="/wellness" element={<Wellness />} />
+            <Route path="/Wellness" element={<Wellness />} />
             {/* Auth Layout */}
             <Route path="/" element={<MindMateLandingPage />} />
 
