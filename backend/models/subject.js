@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const sub = new mongoose.Schema({
+const subjectSchema = new mongoose.Schema({
     subName: {
         type: String,
         required: true,
@@ -11,6 +11,6 @@ const sub = new mongoose.Schema({
     }
 });
 
-const Subject = mongoose.model("Subject", Subject);
+const Subject = mongoose.model("Subject", subjectSchema);
 
 module.exports = Subject;
