@@ -16,7 +16,7 @@ const Wellness = () => {
       artist: "Nature Sounds",
       duration: "5:32",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
-      cover: "https://source.unsplash.com/random/300x300/?ocean,water",
+      cover: "https://i.postimg.cc/mDHFBJvZ/Gemini-Generated-Image-f4wuiff4wuiff4wu.jpg",
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Wellness = () => {
       artist: "Zen Master",
       duration: "8:45",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
-      cover: "https://source.unsplash.com/random/300x300/?meditation,yoga",
+      cover: "https://i.postimg.cc/m28hfTPN/Gemini-Generated-Image-lk0c97lk0c97lk0c.jpg",
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const Wellness = () => {
       artist: "Nature Sounds",
       duration: "6:18",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
-      cover: "https://source.unsplash.com/random/300x300/?forest,trees",
+      cover: "https://i.postimg.cc/J467YKFp/Gemini-Generated-Image-wvxu1hwvxu1hwvxu.jpg",
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ const Wellness = () => {
       artist: "Nature Sounds",
       duration: "6:18",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-      cover: "https://source.unsplash.com/random/300x300/?forest,trees",
+      cover: "https://i.postimg.cc/J467YKFp/Gemini-Generated-Image-wvxu1hwvxu1hwvxu.jpg",
     },
   ];
 
