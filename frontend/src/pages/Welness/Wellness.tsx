@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router";
 
 const Wellness = () => {
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement>(null); // Added type for audioRef
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [showActivityModal, setShowActivityModal] = useState(false);
   const [volume, setVolume] = useState(0.7);
@@ -16,7 +15,7 @@ const Wellness = () => {
       title: "Calming Ocean Waves",
       artist: "Nature Sounds",
       duration: "5:32",
-      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
       cover: "https://source.unsplash.com/random/300x300/?ocean,water",
     },
     {
@@ -24,7 +23,7 @@ const Wellness = () => {
       title: "Meditation Music",
       artist: "Zen Master",
       duration: "8:45",
-      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
       cover: "https://source.unsplash.com/random/300x300/?meditation,yoga",
     },
     {
@@ -32,7 +31,15 @@ const Wellness = () => {
       title: "Forest Ambience",
       artist: "Nature Sounds",
       duration: "6:18",
-      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+      cover: "https://source.unsplash.com/random/300x300/?forest,trees",
+    },
+    {
+      id: 3,
+      title: "vibe Ambience",
+      artist: "Nature Sounds",
+      duration: "6:18",
+      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
       cover: "https://source.unsplash.com/random/300x300/?forest,trees",
     },
   ];
@@ -78,16 +85,23 @@ const Wellness = () => {
 
   // Handle play/pause and track changes
   useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch((error) => {
+          console.error("Audio playback failed:", error);
+          setIsPlaying(false);
+        });
+      } else {
+        audioRef.current.pause();
+      }
     }
   }, [isPlaying, currentTrack]);
 
   // Update progress bar and handle volume
   useEffect(() => {
     const audio = audioRef.current;
+    if (!audio) return;
+
     audio.volume = volume;
 
     const updateProgress = () => {
@@ -96,12 +110,16 @@ const Wellness = () => {
       setProgress((currentTime / duration) * 100);
     };
 
+    const handleEnded = () => {
+      handleNext();
+    };
+
     audio.addEventListener("timeupdate", updateProgress);
-    audio.addEventListener("ended", handleNext);
+    audio.addEventListener("ended", handleEnded);
 
     return () => {
       audio.removeEventListener("timeupdate", updateProgress);
-      audio.removeEventListener("ended", handleNext);
+      audio.removeEventListener("ended", handleEnded);
     };
   }, [volume]);
 
@@ -121,7 +139,9 @@ const Wellness = () => {
     setIsPlaying(true);
   };
 
-  const handleProgressClick = (e) => {
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!audioRef.current) return;
+
     const progressBar = e.currentTarget;
     const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
     const progressBarWidth = progressBar.clientWidth;
@@ -132,13 +152,15 @@ const Wellness = () => {
     setProgress(percentageClicked);
   };
 
-  const handleVolumeChange = (e) => {
-    const newVolume = e.target.value;
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
-    audioRef.current.volume = newVolume;
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
   };
 
-  const startActivity = (activity) => {
+  const startActivity = (activity: any) => {
     setSelectedActivity(activity);
     setShowActivityModal(true);
     if (isPlaying) {
@@ -146,7 +168,7 @@ const Wellness = () => {
     }
   };
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
@@ -367,7 +389,7 @@ const Wellness = () => {
       </div>
 
       {/* Activity Modal */}
-      {showActivityModal && (
+      {showActivityModal && selectedActivity && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-xl p-6 max-w-md w-full dark:bg-gray-800 animate-fade-in">
             <div className="flex justify-between items-center mb-4">
