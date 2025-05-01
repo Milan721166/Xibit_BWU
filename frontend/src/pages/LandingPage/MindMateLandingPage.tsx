@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { FiArrowRight, FiCheck, FiGithub, FiLinkedin, FiTwitter, FiExternalLink } from 'react-icons/fi';
-import { FaReact, FaNodeJs, FaPython, FaFigma } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiOpenai, SiFirebase, SiSupabase, SiTypescript, SiJest, SiPrisma } from 'react-icons/si';
+import { FaReact, FaNodeJs } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiOpenai, SiFirebase, SiSupabase, SiTypescript } from 'react-icons/si';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -120,7 +120,7 @@ const MindMateLandingPage: React.FC = () => {
         "Adaptive scheduling with focus-rest optimization",
         "Calendar integration + reminder notifications"
       ],
-      image: "https://source.unsplash.com/random/540x400/?planner"
+      image: "https://i.postimg.cc/HxK7CBJ4/Gemini-Generated-Image-mbvokmmbvokmmbvo.jpg"
     },
     mental: {
       title: "Daily Mental Health Check-ins",
@@ -217,30 +217,7 @@ const MindMateLandingPage: React.FC = () => {
       description: "Google's platform for app development and hosting",
       color: "hover:text-yellow-500"
     },
-    { 
-      name: "Jest", 
-      icon: <SiJest className="text-red-500" />,
-      description: "JavaScript testing framework",
-      color: "hover:text-red-500"
-    },
-    { 
-      name: "Prisma", 
-      icon: <SiPrisma className="text-blue-800" />,
-      description: "Next-generation ORM for Node.js and TypeScript",
-      color: "hover:text-blue-800"
-    },
-    { 
-      name: "Python", 
-      icon: <FaPython className="text-blue-700" />,
-      description: "Versatile programming language for AI/ML",
-      color: "hover:text-blue-700"
-    },
-    { 
-      name: "Figma", 
-      icon: <FaFigma className="text-purple-600" />,
-      description: "Collaborative interface design tool",
-      color: "hover:text-purple-600"
-    }
+   
   ];
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -390,7 +367,7 @@ const MindMateLandingPage: React.FC = () => {
             >
               <div className="relative">
                 <img 
-                  src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-7688-622f-8dd6-102298c0d1a8/raw?se=2025-05-01T08%3A11%3A43Z&sp=r&sv=2024-08-04&sr=b&scid=a60312f7-846d-5871-8c3d-28f3ed5777bd&skoid=d958ec58-d47c-4d2f-a9f2-7f3e03fdcf72&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-01T03%3A46%3A31Z&ske=2025-05-02T03%3A46%3A31Z&sks=b&skv=2024-08-04&sig=e20JPlfASUCEum1L7tJoHKUDLLk75GqoNE38LAaCdL0%3D" 
+                  src="https://i.postimg.cc/xCgbF9Q7/Gemini-Generated-Image-68jao368jao368ja.jpg" 
                   alt="MindMate App Preview"
                   className="w-full max-w-md mx-auto rounded-2xl shadow-2xl border-8 border-white transform rotate-1"
                 />
