@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Wellness = () => {
   const [currentTrack, setCurrentTrack] = useState(0);
@@ -41,7 +41,8 @@ const Wellness = () => {
     {
       id: 1,
       title: "5-Minute Breathing Exercise",
-      description: "Follow this simple breathing pattern to reduce stress: Inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. Repeat for 5 minutes.",
+      description:
+        "Follow this simple breathing pattern to reduce stress: Inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. Repeat for 5 minutes.",
       duration: "5 min",
       icon: "🧘",
       bgColor: "bg-blue-100 dark:bg-blue-900",
@@ -49,7 +50,8 @@ const Wellness = () => {
     {
       id: 2,
       title: "Quick Stretch Routine",
-      description: "Stand up and stretch your arms overhead, then bend to each side. Roll your shoulders and neck gently. Perfect for a quick break!",
+      description:
+        "Stand up and stretch your arms overhead, then bend to each side. Roll your shoulders and neck gently. Perfect for a quick break!",
       duration: "3 min",
       icon: "🤸",
       bgColor: "bg-green-100 dark:bg-green-900",
@@ -57,7 +59,8 @@ const Wellness = () => {
     {
       id: 3,
       title: "Gratitude Journaling",
-      description: "Write down 3 things you're grateful for today. Focusing on positive aspects can significantly improve your mood.",
+      description:
+        "Write down 3 things you're grateful for today. Focusing on positive aspects can significantly improve your mood.",
       duration: "5 min",
       icon: "📝",
       bgColor: "bg-purple-100 dark:bg-purple-900",
@@ -65,7 +68,8 @@ const Wellness = () => {
     {
       id: 4,
       title: "Laughing Exercise",
-      description: "Force yourself to laugh for 30 seconds. Even fake laughter can trigger endorphins and improve your mood!",
+      description:
+        "Force yourself to laugh for 30 seconds. Even fake laughter can trigger endorphins and improve your mood!",
       duration: "1 min",
       icon: "😂",
       bgColor: "bg-yellow-100 dark:bg-yellow-900",
@@ -92,12 +96,12 @@ const Wellness = () => {
       setProgress((currentTime / duration) * 100);
     };
 
-    audio.addEventListener('timeupdate', updateProgress);
-    audio.addEventListener('ended', handleNext);
+    audio.addEventListener("timeupdate", updateProgress);
+    audio.addEventListener("ended", handleNext);
 
     return () => {
-      audio.removeEventListener('timeupdate', updateProgress);
-      audio.removeEventListener('ended', handleNext);
+      audio.removeEventListener("timeupdate", updateProgress);
+      audio.removeEventListener("ended", handleNext);
     };
   }, [volume]);
 
@@ -111,7 +115,9 @@ const Wellness = () => {
   };
 
   const handlePrev = () => {
-    setCurrentTrack((prev) => (prev - 1 + musicTracks.length) % musicTracks.length);
+    setCurrentTrack(
+      (prev) => (prev - 1 + musicTracks.length) % musicTracks.length
+    );
     setIsPlaying(true);
   };
 
@@ -121,7 +127,7 @@ const Wellness = () => {
     const progressBarWidth = progressBar.clientWidth;
     const percentageClicked = (clickPosition / progressBarWidth) * 100;
     const newTime = (percentageClicked / 100) * audioRef.current.duration;
-    
+
     audioRef.current.currentTime = newTime;
     setProgress(percentageClicked);
   };
@@ -143,14 +149,16 @@ const Wellness = () => {
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-6 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">Wellness Center</h1>
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
+            Wellness Center
+          </h1>
           <p className="text-gray-600 dark:text-gray-300">
             Relax, recharge, and find your balance with our music and activities
           </p>
@@ -178,7 +186,7 @@ const Wellness = () => {
               </div>
 
               <div className="w-full mb-4">
-                <div 
+                <div
                   className="h-2 bg-gray-200 rounded-full cursor-pointer dark:bg-gray-700"
                   onClick={handleProgressClick}
                 >
@@ -189,7 +197,9 @@ const Wellness = () => {
                 </div>
                 <div className="flex justify-between mt-1 text-sm text-gray-500 dark:text-gray-400">
                   <span>
-                    {audioRef.current ? formatTime(audioRef.current.currentTime) : "0:00"}
+                    {audioRef.current
+                      ? formatTime(audioRef.current.currentTime)
+                      : "0:00"}
                   </span>
                   <span>{musicTracks[currentTrack].duration}</span>
                 </div>

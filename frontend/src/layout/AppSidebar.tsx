@@ -15,7 +15,7 @@ import {
   TableIcon,
   UserCircleIcon,
 } from "../icons";
-import { Bot, Headphones } from "lucide-react";
+import { Bot, ExternalLink, Headphones, PhoneCall } from "lucide-react";
 import { useSidebar } from "../context/SidebarContext";
 
 type NavItem = {
@@ -52,17 +52,14 @@ const navItems: NavItem[] = [
     path: "/wellness",
   },
   {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
+    name: "form",
+    icon: <ExternalLink />,
+    path: "/form-elements",
   },
   {
-    name: "Pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
-    ],
+    name: "Video Conference",
+    icon: <PhoneCall />,
+    path: "/video-conference",
   },
 ];
 

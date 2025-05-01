@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { FiArrowRight, FiCheck, FiGithub, FiLinkedin, FiTwitter, FiExternalLink } from 'react-icons/fi';
 import { FaReact, FaNodeJs, FaPython, FaFigma } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiOpenai, SiFirebase, SiSupabase, SiTypescript, SiJest, SiPrisma } from 'react-icons/si';
