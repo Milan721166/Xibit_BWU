@@ -21,6 +21,7 @@ import Home from "./pages/Dashboard/Home";
 import AIChatInterface from "./pages/AiBuddy/AiBuddy";
 import { useAuth } from "./hooks/useAuth";
 import StudentDashboard from "./pages/Dashboard/StudentDasboard";
+import TeacherDashboard from "./pages/Dashboard/TeacherDasboard";
 
 export default function App() {
   const {user,role}=useAuth();
@@ -32,7 +33,7 @@ export default function App() {
            <Routes>
            {/* Dashboard Layout */}
            <Route element={<AppLayout />}>
-             <Route index path="/" element={role=='user' ? <StudentDashboard/> : role=='teacher' ? <} />
+             <Route index path="/" element={role=='user' ? <StudentDashboard/> : role=='teacher' ? <TeacherDashboard/> : <Home/>} />
  
              {/* Others Page */}
              <Route path="/profile" element={<UserProfiles />} />
