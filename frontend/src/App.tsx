@@ -32,10 +32,11 @@ export default function App() {
 
   return (
     <>
-      <Router>
-        <ScrollToTop />
+    
 
         {user ? (
+            <Router>
+        <ScrollToTop />
           <Routes>
             {/* Dashboard Layout */}
             <Route element={<AppLayout />}>
@@ -87,7 +88,10 @@ export default function App() {
             {/* Fallback Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Router>
         ) : (
+          <Router>
+        <ScrollToTop />
           <Routes>
             {/* Dashboard Layout */}
             {/* Auth Layout */}
@@ -99,8 +103,9 @@ export default function App() {
             {/* Fallback Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+               </Router>
         )}
-      </Router>
+ 
     </>
   );
 }
