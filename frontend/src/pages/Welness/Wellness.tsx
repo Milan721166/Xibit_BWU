@@ -11,20 +11,22 @@ const Wellness = () => {
 
   const musicTracks = [
     {
-      id: 1,
-      title: "Calming Ocean Waves",
-      artist: "Nature Sounds",
-      duration: "5:32",
-      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
-      cover: "https://i.postimg.cc/mDHFBJvZ/Gemini-Generated-Image-f4wuiff4wuiff4wu.jpg",
-    },
-    {
       id: 2,
       title: "Meditation Music",
       artist: "Zen Master",
       duration: "8:45",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
-      cover: "https://i.postimg.cc/m28hfTPN/Gemini-Generated-Image-lk0c97lk0c97lk0c.jpg",
+      cover:
+        "https://i.postimg.cc/m28hfTPN/Gemini-Generated-Image-lk0c97lk0c97lk0c.jpg",
+    },
+    {
+      id: 1,
+      title: "Calming Ocean Waves",
+      artist: "Nature Sounds",
+      duration: "5:32",
+      source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+      cover:
+        "https://i.postimg.cc/mDHFBJvZ/Gemini-Generated-Image-f4wuiff4wuiff4wu.jpg",
     },
     {
       id: 1,
@@ -40,7 +42,8 @@ const Wellness = () => {
       artist: "Nature Sounds",
       duration: "6:18",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
-      cover: "https://i.postimg.cc/J467YKFp/Gemini-Generated-Image-wvxu1hwvxu1hwvxu.jpg",
+      cover:
+        "https://i.postimg.cc/J467YKFp/Gemini-Generated-Image-wvxu1hwvxu1hwvxu.jpg",
     },
     {
       id: 3,
@@ -48,7 +51,8 @@ const Wellness = () => {
       artist: "Nature Sounds",
       duration: "6:18",
       source: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-      cover: "https://i.postimg.cc/J467YKFp/Gemini-Generated-Image-wvxu1hwvxu1hwvxu.jpg",
+      cover:
+        "https://i.postimg.cc/J467YKFp/Gemini-Generated-Image-wvxu1hwvxu1hwvxu.jpg",
     },
   ];
 
