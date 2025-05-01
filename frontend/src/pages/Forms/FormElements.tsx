@@ -48,7 +48,7 @@ export default function FormElements() {
               <h1 className="text-2xl font-semibold leading-tight">Attendance Form</h1>
               <p className="mt-2 text-sm text-gray-600">Please fill out the form below to mark attendance.</p>
             </div>
-<div className="col-span-1 md:col-span-2 py-2 lg:col-span-3">
+<div className="col-span-1 md:col-span-2 space-y-2 lg:col-span-3">
 <h1 className="text-2xl font-semibold leading-tight">Select Student</h1>
             <Select
              
