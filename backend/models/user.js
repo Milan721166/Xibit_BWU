@@ -1,4 +1,3 @@
-const express = resuie("express");
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -21,8 +20,13 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['user', 'admin', 'owner'],
+        enum: ['user', 'admin', 'teacher'],
         default: 'user'
+    },
+    token:{
+        type:String,
+        required:false,
+
     },
     createdAt: {
         type: Date,
