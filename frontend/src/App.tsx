@@ -30,12 +30,10 @@ import VideoCallLanding from "./pages/VideoConference/VideoCallLanding";
 export default function App() {
   const { user, role } = useAuth();
 
-
   return (
     <>
       <Router>
         <ScrollToTop />
-
 
         {user ? (
           <Routes>
@@ -91,7 +89,7 @@ export default function App() {
         ) : (
           <Routes>
             {/* Dashboard Layout */}
-
+            <Route path="/wellness" element={<Wellness />} />
             {/* Auth Layout */}
             <Route path="/" element={<MindMateLandingPage />} />
 
@@ -102,8 +100,6 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         )}
-
-      
       </Router>
     </>
   );
